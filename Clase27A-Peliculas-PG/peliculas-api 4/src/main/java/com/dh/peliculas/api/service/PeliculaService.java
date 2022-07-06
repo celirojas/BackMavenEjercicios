@@ -16,10 +16,15 @@ public class PeliculaService {
     public PeliculaService(IRepository<Pelicula> peliculaRepository) {
         this.peliculaRepository = peliculaRepository;
     }
+	
+	
+	
 
     public Pelicula agregarPelicula(Pelicula pelicula){
         return this.peliculaRepository.agregar(pelicula);
     }
+	
+	
     public List<PeliculaDTO> buscarTodas(){
         ObjectMapper mapper = new ObjectMapper();
         List<Pelicula> peliculas = peliculaRepository.buscar();
@@ -32,6 +37,8 @@ public class PeliculaService {
 
         return peliculasDTO;
     }
+	
+	
 
     public Boolean eliminar(Integer id){
         return peliculaRepository.eliminar(id);
